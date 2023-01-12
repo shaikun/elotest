@@ -5,7 +5,9 @@
   "license": "MIT",
   "require": {
     "php": "^7.4",
+    "doctrine/dbal": "^3.5",
     "illuminate/database": "^8.83",
+    "robmorgan/phinx": "^0.13.4",
     "twig/twig": "^3.0"
   },
   "autoload": {
@@ -19,6 +21,12 @@
     "files": [
       "resources/bootstrap.php"
     ]
+  },
+  "scripts": {
+    "create": "vendor/bin/phinx create",
+    "migrate": "vendor/bin/phinx migrate",
+    "migrations": "vendor/bin/phinx status",
+    "rollback": "vendor/bin/phinx rollback"
   },
   "config": {
     "optimize-autoloader": true,

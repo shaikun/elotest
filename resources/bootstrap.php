@@ -17,6 +17,16 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
     require __DIR__ . '/../vendor/autoload.php';
 }
 
+const DATABASE = [
+    "driver"    => "mysql",
+    "host"      => "127.0.0.1",
+    "database"  => "test",
+    "username"  => "root",
+    "password"  => "",
+    'port'      => '3306',
+    'charset'   => 'utf8',
+];
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,13 +38,7 @@ if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
 */
 
 $capsule = new Capsule;
-$capsule->addConnection([
-    "driver"    => "mysql",
-    "host"      => "127.0.0.1",
-    "database"  => "test",
-    "username"  => "root",
-    "password"  => ""
-]);
+$capsule->addConnection(DATABASE);
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
 
